@@ -2,7 +2,6 @@ import com.example.Cat;
 import com.example.Feline;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
@@ -19,14 +18,12 @@ public class CatTest {
     @Test
     public void testGetFood() throws Exception {
         Feline mockFeline = mock(Feline.class);
-        when(mockFeline.eatMeat()).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
+        when(mockFeline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 
         Cat cat = new Cat(mockFeline);
+        List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
         List<String> food = cat.getFood();
 
-        assertEquals(3, food.size());
-        assertEquals("Животные", food.get(0));
-        assertEquals("Птицы", food.get(1));
-        assertEquals("Рыба", food.get(2));
+        assertEquals(expectedFood, food);
     }
 }

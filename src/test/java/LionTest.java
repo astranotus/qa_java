@@ -49,10 +49,14 @@ public class LionTest {
     }
 
     @Test
-    void testDoesHaveMane() throws Exception {
+    void testDoesHaveManeMale() throws Exception {
         Lion maleLion = new Lion("Самец", feline);
-        Lion femaleLion = new Lion("Самка", feline);
         assertTrue(maleLion.doesHaveMane());
+    }
+
+    @Test
+    void testDoesHaveManeFemale() throws Exception {
+        Lion femaleLion = new Lion("Самка", feline);
         assertFalse(femaleLion.doesHaveMane());
     }
 

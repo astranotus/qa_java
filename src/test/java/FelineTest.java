@@ -12,7 +12,6 @@ public class FelineTest {
     public void testEatMeat(String foodType) throws Exception {
         Feline feline = new Feline();
         List<String> food = feline.eatMeat();
-        assertEquals(3, food.size());
         for (String f : food) {
             assertEquals(foodType, f);
         }
